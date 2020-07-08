@@ -1,0 +1,9 @@
+<div class="wrapper" fxLayout="column" fxLayout.md="row-reverse">
+  <app-product-detail fxFlex="auto" fxFlex.md="65%" *ngIf="product$ | async as product" [product]="product">
+  </app-product-detail>
+  <app-product-suggestion fxFlex="auto" fxFlex.md="35%"
+  *ngIf="{suggestedProducts: suggestedProducts$ | async,
+    sProduct: product$ | async} as data"
+    [products]="data.suggestedProducts" [specProduct]="data.sProduct">
+  </app-product-suggestion>
+</div>
